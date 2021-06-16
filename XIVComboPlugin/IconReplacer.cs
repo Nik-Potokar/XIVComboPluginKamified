@@ -1409,22 +1409,26 @@ namespace XIVComboKamifiedPlugin
                 {
                     if (HasBuff(MNK.Buffs.RaptorForm))
                     {
-                        if (Globals.TwinSnakesInt < 5)
-                        {
-                            Globals.TwinSnakesInt = 0;
+                        if (HasBuff(MNK.Buffs.TwinSnakes))
                             return MNK.TrueStrike;
-                        }
-                        else
-                        {
-                            Globals.TwinSnakesInt++;
-                            if (level < MNK.Levels.TwinSnakes)
-                                return MNK.TrueStrike;
+
+                        if (level >= MNK.Levels.TwinSnakes)
                             return MNK.TwinSnakes;
-                        }
+
+                        return MNK.TrueStrike;
                     }
 
                     if (HasBuff(MNK.Buffs.CoerlForm))
+                    {
+                        if (TargetHasBuff(MNK.Debuffs.Demolish))
+                            return MNK.SnapPunch;
+
+                        if (level >= MNK.Levels.Demolish)
+                            return MNK.Demolish;
+
                         return MNK.SnapPunch;
+                    }
+
 
                     return MNK.Bootshine;
                 }

@@ -9,10 +9,6 @@ using System.Numerics;
 
 namespace XIVComboKamifiedPlugin
 {
-    public class Globals
-    {
-        public static int TwinSnakesInt { get; set; }
-    }
     public class XIVComboKamifiedPlugin : IDalamudPlugin
     {
         public string Name => "XIV Combo Kamified Plugin";

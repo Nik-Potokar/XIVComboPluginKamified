@@ -332,6 +332,8 @@ namespace XIVComboKamifiedPlugin
         [CustomComboInfo("Monk Bootshine Feature", "Replaces Dragon Kick with Bootshine if both a form and Leaden Fist are up.", MNK.JobID, MNK.DragonKick)]
         MnkBootshineFeature = 65,
 
+        [CustomComboInfo("Monk Basic Test", "Trying out a basic rotation chain - TEST", MNK.JobID, MNK.Bootshine)]
+        MnkBasicTest = 73,
 
         #endregion
         // ====================================================================================

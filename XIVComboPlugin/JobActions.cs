@@ -448,6 +448,7 @@ namespace XIVComboKamifiedPlugin
 
         public const uint
             Bootshine = 53,
+            TrueStrike = 54,
             DragonKick = 74,
             SnapPunch = 56,
             TwinSnakes = 61,
@@ -480,7 +481,8 @@ namespace XIVComboKamifiedPlugin
                 Rockbreaker = 30,
                 Demolish = 30,
                 FourPointFury = 45,
-                DragonKick = 50;
+                DragonKick = 50,
+                TwinSnakes = 18;
         }
     }
 

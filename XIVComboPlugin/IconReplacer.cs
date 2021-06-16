@@ -108,6 +108,7 @@ namespace XIVComboKamifiedPlugin
             var comboTime = Marshal.PtrToStructure<float>(Address.ComboTimer);
             var level = Interface.ClientState.LocalPlayer.Level;
             var mp = Interface.ClientState.LocalPlayer.CurrentMp;
+            var TwinSnakesInt = 0;
 
             // ====================================================================================
             #region DRAGOON
@@ -1400,6 +1401,33 @@ namespace XIVComboKamifiedPlugin
                     if (level < MNK.Levels.DragonKick)
                         return MNK.Bootshine;
                     return MNK.DragonKick;
+                }
+            }
+
+            if (Configuration.IsEnabled(CustomComboPreset.MnkBasicTest))
+            {
+                if (actionID == MNK.Bootshine)
+                {
+                    if (HasBuff(MNK.Buffs.RaptorForm))
+                    {
+                        if (TwinSnakesInt == 1)
+                        {
+                            TwinSnakesInt--;
+                            return MNK.TrueStrike;
+                        }
+                        else
+                        {
+                            TwinSnakesInt++;
+                            if (level < MNK.Levels.TwinSnakes)
+                                return MNK.TrueStrike;
+                            return MNK.TwinSnakes;
+                        }
+                    }
+
+                    if (HasBuff(MNK.Buffs.CoerlForm))
+                        return MNK.SnapPunch;
+
+                    return MNK.Bootshine;
                 }
             }
 

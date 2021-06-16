@@ -11,7 +11,7 @@ namespace XIVComboKamifiedPlugin
 {
     public class XIVComboKamifiedPlugin : IDalamudPlugin
     {
-        public string Name => "XIV Combo Expandedest Plugin";
+        public string Name => "XIV Combo Kamified Plugin";
         public string Command => "/pcombo";
 
         internal XIVComboKamifiedConfiguration Configuration;

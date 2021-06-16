@@ -1407,7 +1407,7 @@ namespace XIVComboKamifiedPlugin
             {
                 if (actionID == MNK.Bootshine)
                 {
-                    if (HasBuff(MNK.Buffs.RaptorForm))
+                    if (HasBuff(MNK.Buffs.RaptorForm) && level >= MNK.Levels.TrueStrike)
                     {
                         if (HasBuff(MNK.Buffs.TwinSnakes))
                             return MNK.TrueStrike;
@@ -1418,7 +1418,7 @@ namespace XIVComboKamifiedPlugin
                         return MNK.TrueStrike;
                     }
 
-                    if (HasBuff(MNK.Buffs.CoerlForm))
+                    if (HasBuff(MNK.Buffs.CoerlForm) && level >= MNK.Levels.SnapPunch)
                     {
                         if (TargetHasBuff(MNK.Debuffs.Demolish))
                             return MNK.SnapPunch;

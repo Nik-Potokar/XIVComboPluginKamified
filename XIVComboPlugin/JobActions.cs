@@ -482,7 +482,9 @@ namespace XIVComboKamifiedPlugin
                 Demolish = 30,
                 FourPointFury = 45,
                 DragonKick = 50,
-                TwinSnakes = 18;
+                TwinSnakes = 18,
+                TrueStrike = 4,
+                SnapPunch = 6;
         }
     }
 

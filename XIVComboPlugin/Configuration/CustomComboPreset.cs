@@ -5,7 +5,7 @@ namespace XIVComboKamifiedPlugin
     public enum CustomComboPreset
     {
         // Last enum used: 99
-        // Unused enums: 73, 76, 77, 83, 86, 92
+        // Unused enums: 83, 86, 92
         // ====================================================================================
         #region DRAGOON
 
@@ -321,6 +321,17 @@ namespace XIVComboKamifiedPlugin
 
         [CustomComboInfo("Burst Shot/Quick Nock into Apex Arrow", "Replaces Burst Shot and Quick Nock with Apex Arrow when gauge is full.", BRD.JobID, BRD.BurstShot, BRD.QuickNock)]
         BardApexFeature = 85,
+
+        /*
+        [CustomComboInfo("Single Target","Single target attacks", BRD.JobID, BRD.SideWinder)]
+        BardSingleTarget = 76,
+
+        [CustomComboInfo("AOE", "AOE attacks", BRD.JobID, BRD.QuickNock)]
+        BardAOETarget = 77,
+        */
+
+        [CustomComboInfo("DOTS","Damage over time in one button", BRD.JobID, BRD.CausticBite)]
+        BardDOTS = 83,
 
         #endregion
         // ====================================================================================

@@ -1367,6 +1367,32 @@ namespace XIVComboKamifiedPlugin
                     return BRD.ApexArrow;
             }
 
+            /*
+            //Single Target
+            if(Configuration.IsEnabled(CustomComboPreset.BardSingleTarget))
+            {
+
+
+                return BRD.SideWinder;
+            }
+
+
+            //AOE
+            if(Configuration.IsEnabled(CustomComboPreset.BardAOETarget))
+            {
+
+            }
+            */
+
+            // DOTS
+            if(Configuration.IsEnabled(CustomComboPreset.BardDOTS))
+            {
+                if (TargetHasBuff(BRD.Debuffs.CausticBite))
+                    return BRD.Stormbite;
+
+                return BRD.CausticBite;
+            }
+
             #endregion
             // ====================================================================================
             #region MONK
@@ -1409,26 +1435,17 @@ namespace XIVComboKamifiedPlugin
                 {
                     if (HasBuff(MNK.Buffs.RaptorForm) && level >= MNK.Levels.TrueStrike)
                     {
-                        if (HasBuff(MNK.Buffs.TwinSnakes))
-                            return MNK.TrueStrike;
-
-                        if (level >= MNK.Levels.TwinSnakes)
+                        if (!HasBuff(MNK.Buffs.TwinSnakes))
                             return MNK.TwinSnakes;
-
                         return MNK.TrueStrike;
                     }
 
                     if (HasBuff(MNK.Buffs.CoerlForm) && level >= MNK.Levels.SnapPunch)
                     {
-                        if (TargetHasBuff(MNK.Debuffs.Demolish))
-                            return MNK.SnapPunch;
-
-                        if (level >= MNK.Levels.Demolish)
+                        if (!TargetHasBuff(MNK.Debuffs.Demolish))
                             return MNK.Demolish;
-
                         return MNK.SnapPunch;
                     }
-
 
                     return MNK.Bootshine;
                 }

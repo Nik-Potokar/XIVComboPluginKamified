@@ -114,6 +114,7 @@ namespace XIVComboKamifiedPlugin
             CausticBite = 7406,
             Stormbite = 7407,
             RefulgentArrow = 7409,
+            SideWinder = 3562,
             ApexArrow = 16496;
 
         public static class Buffs

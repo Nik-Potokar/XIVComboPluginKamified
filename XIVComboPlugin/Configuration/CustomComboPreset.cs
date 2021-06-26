@@ -330,7 +330,7 @@ namespace XIVComboKamifiedPlugin
         BardAOETarget = 77,
         */
 
-        [CustomComboInfo("DOTS","Damage over time in one button", BRD.JobID, BRD.CausticBite)]
+        [CustomComboInfo("Damage Over Time","Damage over time in one button", BRD.JobID, BRD.VenomousBite)]
         BardDOTS = 83,
 
         #endregion

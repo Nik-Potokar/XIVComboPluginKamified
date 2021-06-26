@@ -25,8 +25,9 @@ namespace XIVComboKamifiedPlugin
         public bool IsSecret(CustomComboPreset preset) => preset.GetAttribute<SecretCustomComboAttribute>() != default;
 
         #region Obsolete
+        
 #pragma warning disable IDE1006 // Naming Styles
-
+        
         [Flags]
         [Obsolete]
         public enum LegacyCustomComboPreset : long
@@ -104,6 +105,7 @@ namespace XIVComboKamifiedPlugin
         private List<bool> _HiddenActionsBacker = new List<bool>();
 
 #pragma warning restore IDE1006 // Naming Styles
+        
         #endregion
 
         public void Upgrade()

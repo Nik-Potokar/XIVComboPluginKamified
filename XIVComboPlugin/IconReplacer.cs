@@ -1387,19 +1387,22 @@ namespace XIVComboKamifiedPlugin
             // DOTS
             if(Configuration.IsEnabled(CustomComboPreset.BardDOTS))
             {
-                if(level >= BRD.Levels.BiteUpgrade)
+                if (actionID == BRD.VenomousBite || actionID == BRD.Windbite || actionID == BRD.CausticBite || actionID == BRD.Stormbite)
                 {
-                    if (TargetHasBuff(BRD.Debuffs.CausticBite))
-                        return BRD.Stormbite;
+                    if (level >= BRD.Levels.BiteUpgrade)
+                    {
+                        if (TargetHasBuff(BRD.Debuffs.CausticBite))
+                            return BRD.Stormbite;
 
-                    return BRD.CausticBite;
-                }
-                else
-                {
-                    if (TargetHasBuff(BRD.Debuffs.VenomousBite))
-                        return BRD.Windbite;
+                        return BRD.CausticBite;
+                    }
+                    else
+                    {
+                        if (TargetHasBuff(BRD.Debuffs.VenomousBite))
+                            return BRD.Windbite;
 
-                    return BRD.VenomousBite;
+                        return BRD.VenomousBite;
+                    }
                 }
             }
 

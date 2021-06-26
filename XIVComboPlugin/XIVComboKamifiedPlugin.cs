@@ -9,10 +9,10 @@ using System.Numerics;
 
 namespace XIVComboKamifiedPlugin
 {
-    public class XIVComboKamifiedPlugin : IDalamudPlugin
+    public sealed class XIVComboKamifiedPlugin : IDalamudPlugin
     {
         public string Name => "XIV Combo Kamified Plugin";
-        public string Command => "/pcombo";
+        private readonly string Command = "/pcombo";
 
         internal XIVComboKamifiedConfiguration Configuration;
         internal const int CURRENT_CONFIG_VERSION = 4;

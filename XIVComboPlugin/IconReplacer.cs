@@ -1146,6 +1146,15 @@ namespace XIVComboKamifiedPlugin
             // Fan Dance changes into Fan Dance 3 while flourishing.
             if (Configuration.IsEnabled(CustomComboPreset.DancerFanDanceCombo))
             {
+                // Do saber dance if ready
+                if((actionID == DNC.FanDance1 || actionID == DNC.FanDance2) && level >= DNC.Levels.SaberDance)
+                {
+                    var gauge = GetJobGauge<DNCGauge>();
+
+                    if (gauge.Esprit >= 50)
+                        return DNC.SaberDance;
+                }
+
                 if (actionID == DNC.FanDance1)
                 {
                     if (HasBuff(DNC.Buffs.FlourishingFanDance))
@@ -1387,7 +1396,7 @@ namespace XIVComboKamifiedPlugin
             // DOTS
             if(Configuration.IsEnabled(CustomComboPreset.BardDOTS))
             {
-                if (actionID == BRD.VenomousBite || actionID == BRD.Windbite || actionID == BRD.CausticBite || actionID == BRD.Stormbite)
+                if (actionID == BRD.VenomousBite)
                 {
                     if (level >= BRD.Levels.BiteUpgrade)
                     {

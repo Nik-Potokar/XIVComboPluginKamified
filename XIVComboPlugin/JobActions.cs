@@ -136,7 +136,10 @@ namespace XIVComboKamifiedPlugin
         public static class Levels
         {
             public const byte
+                VenomousBite = 6,
                 Windbite = 30,
+                CausticBite = 64,
+                StormBiite = 64,
                 IronJaws = 56,
                 BiteUpgrade = 64,
                 RefulgentArrow = 70,
@@ -215,6 +218,7 @@ namespace XIVComboKamifiedPlugin
         {
             public const byte
                 Fountain = 2,
+                SaberDance = 76,
                 Bladeshower = 25;
         }
     }

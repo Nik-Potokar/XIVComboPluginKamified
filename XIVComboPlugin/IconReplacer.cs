@@ -1398,20 +1398,43 @@ namespace XIVComboKamifiedPlugin
             {
                 if (actionID == BRD.VenomousBite)
                 {
+                    short debuf1;
+                    short debuf2;
+                    uint finish1;
+                    uint finish2;
+                    byte lvlcheck;
+
+                    // Check which skills to use
                     if (level >= BRD.Levels.BiteUpgrade)
                     {
-                        if (TargetHasBuff(BRD.Debuffs.CausticBite))
-                            return BRD.Stormbite;
-
-                        return BRD.CausticBite;
+                        // High level
+                        // Setup vars to hold info
+                        debuf1 = BRD.Debuffs.CausticBite;
+                        debuf2 = BRD.Debuffs.Stormbite;
+                        finish1 = BRD.CausticBite;
+                        finish2 = BRD.Stormbite;
+                        lvlcheck = BRD.Levels.StormBiite;
                     }
                     else
                     {
-                        if (TargetHasBuff(BRD.Debuffs.VenomousBite))
-                            return BRD.Windbite;
-
-                        return BRD.VenomousBite;
+                        // Low level
+                        // Setup vars to hold info
+                        debuf1 = BRD.Debuffs.VenomousBite;
+                        debuf2 = BRD.Debuffs.Windbite;
+                        finish1 = BRD.VenomousBite;
+                        finish2 = BRD.Windbite;
+                        lvlcheck = BRD.Levels.Windbite;
                     }
+
+                    if (TargetHasBuff(debuf1) && TargetHasBuff(debuf2))
+                    {
+                        if (TargetBuffDuration(debuf1) < TargetBuffDuration(debuf2))
+                            return finish1;
+                        return finish2;
+                    }
+                    else if (TargetHasBuff(debuf2) || level < lvlcheck)
+                        return finish1;
+                    return finish2;
                 }
             }
 

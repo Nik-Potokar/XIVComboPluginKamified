@@ -458,6 +458,7 @@ namespace XIVComboKamifiedPlugin
             SnapPunch = 56,
             TwinSnakes = 61,
             Demolish = 66,
+            PerfectBalance = 69,
             ArmOfTheDestroyer = 62,
             FourPointFury = 16473,
             Rockbreaker = 70;

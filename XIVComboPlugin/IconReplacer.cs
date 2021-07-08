@@ -1483,6 +1483,10 @@ namespace XIVComboKamifiedPlugin
             {
                 if (actionID == MNK.Bootshine)
                 {
+                    // Add in ddragon kick to the rotation
+
+
+                    // DragonKick -> TwinSnakes -> Demolish ->
                     if (HasBuff(MNK.Buffs.RaptorForm) && level >= MNK.Levels.TrueStrike)
                     {
                         if (!HasBuff(MNK.Buffs.TwinSnakes) && level >= MNK.Levels.TwinSnakes)
@@ -1497,9 +1501,16 @@ namespace XIVComboKamifiedPlugin
                         return MNK.SnapPunch;
                     }
 
-                    return MNK.Bootshine;
+                    if (HasBuff(MNK.Buffs.LeadenFist))
+                        return MNK.Bootshine;
+                    return MNK.DragonKick;
                 }
             }
+
+            /*
+             * Create a system for use with perfect balance
+             * Find the best skills to use based on buffs, debuffs and lvl
+             */
 
             #endregion
             // ====================================================================================

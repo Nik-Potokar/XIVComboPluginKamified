@@ -1426,15 +1426,20 @@ namespace XIVComboKamifiedPlugin
                         lvlcheck = BRD.Levels.Windbite;
                     }
 
+                    // This needs to change so venomous bite is the first to be applied
+
+                    if (level < lvlcheck)
+                        return finish1;
+
                     if (TargetHasBuff(debuf1) && TargetHasBuff(debuf2))
                     {
                         if (TargetBuffDuration(debuf1) < TargetBuffDuration(debuf2))
                             return finish1;
                         return finish2;
                     }
-                    else if (TargetHasBuff(debuf2) || level < lvlcheck)
-                        return finish1;
-                    return finish2;
+                    else if (TargetHasBuff(debuf1))
+                        return finish2;
+                    return finish1;
                 }
             }
 

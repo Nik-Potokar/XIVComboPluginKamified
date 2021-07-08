@@ -1501,7 +1501,7 @@ namespace XIVComboKamifiedPlugin
                         return MNK.SnapPunch;
                     }
 
-                    if (!HasBuff(MNK.Buffs.LeadenFist))
+                    if (!HasBuff(MNK.Buffs.LeadenFist) && level >= MNK.Levels.DragonKick)
                         return MNK.DragonKick;
                     return MNK.Bootshine;
                 }

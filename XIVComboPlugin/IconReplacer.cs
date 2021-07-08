@@ -1469,7 +1469,7 @@ namespace XIVComboKamifiedPlugin
 
             if (Configuration.IsEnabled(CustomComboPreset.MnkBootshineFeature))
             {
-                if (actionID == MNK.DragonKick)
+                if (actionID == MNK.Bootshine)
                 {
                     if ((HasBuff(MNK.Buffs.FormlessFist) || HasBuff(MNK.Buffs.OpoOpoForm) || HasBuff(MNK.Buffs.PerfectBalance) || HasBuff(MNK.Buffs.RaptorForm) || HasBuff(MNK.Buffs.CoerlForm)) && HasBuff(MNK.Buffs.LeadenFist))
                         return MNK.Bootshine;

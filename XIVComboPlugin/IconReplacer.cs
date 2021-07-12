@@ -1453,16 +1453,25 @@ namespace XIVComboKamifiedPlugin
                 {
                     if (HasBuff(MNK.Buffs.PerfectBalance) || HasBuff(MNK.Buffs.FormlessFist))
                     {
-                        return MNK.Rockbreaker;
+                        if (level >= MNK.Levels.Rockbreaker)
+                            return MNK.Rockbreaker;
+                        return MNK.ArmOfTheDestroyer;
                     }
+
                     if (HasBuff(MNK.Buffs.OpoOpoForm))
                         return MNK.ArmOfTheDestroyer;
-                    if (HasBuff(MNK.Buffs.RaptorForm) && level >= MNK.Levels.FourPointFury)
+
+                    if (HasBuff(MNK.Buffs.RaptorForm))
                     {
-                        return MNK.FourPointFury;
+                        if (level >= MNK.Levels.FourPointFury)
+                            return MNK.FourPointFury;
+                        else
+                            return MNK.TrueStrike;
                     }
+                    
                     if (HasBuff(MNK.Buffs.CoerlForm) && level >= MNK.Levels.Rockbreaker)
                         return MNK.Rockbreaker;
+
                     return MNK.ArmOfTheDestroyer;
                 }
             }

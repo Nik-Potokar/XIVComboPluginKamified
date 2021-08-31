@@ -1616,46 +1616,6 @@ namespace XIVComboKamifiedPlugin
                 }
             }
 
-            /*
-              * 
-              * New red mage combo, starting with corps-a-corps
-              *   Corps-a-Corps - Riposte - Zwerchauu  - redoublement
-            *
-            if (Configuration.IsEnabled(CustomComboPreset.RedMageBetterMelee))
-            {
-                if (actionID == RDM.Corps)
-                {
-                    var gauge = GetJobGauge<RDMGauge>();
-
-                    PluginLog.Information("Last move was " + lastMove);
-
-                    // Do actions backwards, so:  Redoublement,  Zwerchauu, Reiposte  if none are true return corps-a-corps
-                    if ((lastMove == RDM.Zwerchhau || lastMove == RDM.EnchantedZwerchhau) && level >= RDM.Levels.Redoublement)
-                    {
-                        return GetIconHook.Original(actionManager, RDM.Redoublement);
-                    }
-
-                    if ((lastMove == RDM.Riposte || lastMove == RDM.EnchantedRiposte) && level >= RDM.Levels.Zwerchhau)
-                    {
-                        return GetIconHook.Original(actionManager, RDM.Zwerchhau);
-                    }
-
-                    if (lastMove == RDM.Corps)
-                    {
-                        return GetIconHook.Original(actionManager, RDM.Riposte);
-                    }
-
-                    if (level >= RDM.Levels.Corps)
-                    {
-                        return GetIconHook.Original(actionManager, RDM.Corps);  // This should be default from lvl6 onwards
-                    }
-
-                    return GetIconHook.Original(actionManager, RDM.Riposte);  // This is for use at lower than lvl6, mostly PoTD edge case
-                }
-            }
-
-            */
-
             #endregion
             // ====================================================================================
             #region DISCIPLE OF MAGIC

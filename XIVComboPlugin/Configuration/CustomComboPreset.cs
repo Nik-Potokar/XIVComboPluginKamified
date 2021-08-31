@@ -4,8 +4,8 @@ namespace XIVComboKamifiedPlugin
 {
     public enum CustomComboPreset
     {
-        // Last enum used: 99
-        // Unused enums: 83, 86, 92
+        // Last enum used: 83
+        // Unused enums: 86, 92
         // ====================================================================================
         #region DRAGOON
 
@@ -352,6 +352,9 @@ namespace XIVComboKamifiedPlugin
 
         [CustomComboInfo("Red Mage AoE Combo", "Replaces Veraero/thunder 2 with Impact when Dualcast or Swiftcast are active", RDM.JobID, RDM.Veraero2, RDM.Verthunder2)]
         RedMageAoECombo = 48,
+
+        [CustomComboInfo("Better Melee", "Turn Melee into a single button. Stops before disengaging", RDM.JobID, RDM.Corps)]
+        RedMageBetterMelee = 86,
 
         [CustomComboInfo("Redoublement Combo", "Replaces Redoublement with its combo chain, following enchantment rules", RDM.JobID, RDM.Redoublement)]
         RedMageMeleeCombo = 49,

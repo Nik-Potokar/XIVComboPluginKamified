@@ -564,6 +564,7 @@ namespace XIVComboKamifiedPlugin
             Verraise = 7523,
             Verholy = 7526,
             Verflare = 7525,
+            Corps = 7506,
             Scorch = 16530;
 
         public static class Buffs
@@ -588,6 +589,7 @@ namespace XIVComboKamifiedPlugin
                 Impact = 66,
                 Verflare = 68,
                 Verholy = 70,
+                Corps = 6,
                 Scorch = 80;
         }
     }

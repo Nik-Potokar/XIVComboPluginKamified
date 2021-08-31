@@ -549,6 +549,7 @@ namespace XIVComboKamifiedPlugin
             Veraero2 = 16525,
             Verthunder2 = 16524,
             Impact = 16526,
+            Corps = 7506,
             Redoublement = 7516,
             EnchantedRedoublement = 7529,
             Zwerchhau = 7512,
@@ -564,7 +565,6 @@ namespace XIVComboKamifiedPlugin
             Verraise = 7523,
             Verholy = 7526,
             Verflare = 7525,
-            Corps = 7506,
             Scorch = 16530;
 
         public static class Buffs

@@ -1552,14 +1552,23 @@ namespace XIVComboKamifiedPlugin
                 {
                     var gauge = GetJobGauge<RDMGauge>();
 
-                    PluginLog.Information("Last move was " + lastMove);
-
-                    var cooldown = GetCooldown(RDM.Corps);
-
-                    // Do actions backwards, so:  Redoublement,  Zwerchauu, Reiposte  if none are true return corps-a-corps
-                    if ((lastMove == RDM.Zwerchhau || lastMove == RDM.EnchantedZwerchhau) && level >= RDM.Levels.Redoublement)
+                    if (Configuration.IsEnabled(CustomComboPreset.RedMageMeleeComboPlus))
                     {
-                        return GetIconHook.Original(actionManager, RDM.Redoublement);
+                        if (lastMove == RDM.EnchantedRedoublement)
+                        {
+                            if (gauge.BlackGauge >= gauge.WhiteGauge && level >= RDM.Levels.Verholy)
+                            {
+                                if (HasBuff(RDM.Buffs.VerstoneReady) && !HasBuff(RDM.Buffs.VerfireReady) && (gauge.BlackGauge - gauge.WhiteGauge <= 9))
+                                    return RDM.Verflare;
+                                return RDM.Verholy;
+                            }
+                            else if (level >= RDM.Levels.Verflare)
+                            {
+                                if ((!HasBuff(RDM.Buffs.VerstoneReady) && HasBuff(RDM.Buffs.VerfireReady)) && level >= RDM.Levels.Verholy && (gauge.WhiteGauge - gauge.BlackGauge <= 9))
+                                    return RDM.Verholy;
+                                return RDM.Verflare;
+                            }
+                        }
                     }
 
                     if ((lastMove == RDM.Riposte || lastMove == RDM.EnchantedRiposte) && level >= RDM.Levels.Zwerchhau)
@@ -1567,14 +1576,15 @@ namespace XIVComboKamifiedPlugin
                         return GetIconHook.Original(actionManager, RDM.Zwerchhau);
                     }
 
-                    if (lastMove == RDM.Corps)
+                    if (lastMove == RDM.Zwerchhau && level >= RDM.Levels.Redoublement)
                     {
-                        return GetIconHook.Original(actionManager, RDM.Riposte);
+                        return GetIconHook.Original(actionManager, RDM.Redoublement);
                     }
 
-                    if (level >= RDM.Levels.Corps)
+                    if (Configuration.IsEnabled(CustomComboPreset.RedMageMeleeComboPlus))
                     {
-                        return GetIconHook.Original(actionManager, RDM.Corps);
+                        if ((lastMove == RDM.Verflare || lastMove == RDM.Verholy) && level >= RDM.Levels.Scorch)
+                            return RDM.Scorch;
                     }
 
                     return GetIconHook.Original(actionManager, RDM.Riposte);

@@ -1620,7 +1620,7 @@ namespace XIVComboKamifiedPlugin
               * 
               * New red mage combo, starting with corps-a-corps
               *   Corps-a-Corps - Riposte - Zwerchauu  - redoublement
-            */
+            *
             if (Configuration.IsEnabled(CustomComboPreset.RedMageBetterMelee))
             {
                 if (actionID == RDM.Corps)
@@ -1654,6 +1654,7 @@ namespace XIVComboKamifiedPlugin
                 }
             }
 
+            */
 
             #endregion
             // ====================================================================================

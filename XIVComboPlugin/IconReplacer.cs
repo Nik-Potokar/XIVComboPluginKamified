@@ -1637,6 +1637,8 @@ namespace XIVComboKamifiedPlugin
                 {
                     var gauge = GetJobGauge<RDMGauge>();
 
+                    PluginLog.Log("Last Move",[lastMove]);
+
                     // Do actions backwards, so:  Redoublement,  Zwerchauu, Reiposte  if none are true return corps-a-corps
                     if ((lastMove == RDM.Zwerchhau || lastMove == RDM.EnchantedZwerchhau) && level >= RDM.Levels.Redoublement)
                     {

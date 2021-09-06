@@ -1518,7 +1518,7 @@ namespace XIVComboKamifiedPlugin
                     if(Configuration.TestType == 3 && !Configuration.Tested)
                     {
                         this.Interface.Framework.Gui.Chat.Print("Testing sound!!");
-                        this.Interface.CommandManager.ProcessCommand("/se 11");
+                        this.Interface.Framework.Gui.Chat.Print("/se 11");
                         Configuration.Tested = true;
                     }
 

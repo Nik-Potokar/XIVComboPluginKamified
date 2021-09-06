@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Runtime.InteropServices;
+using Dalamud.Game.Command;
 using Dalamud.Game.ClientState;
 using Dalamud.Game.ClientState.Actors.Types;
 using Dalamud.Game.ClientState.Structs.JobGauge;
@@ -1492,8 +1493,27 @@ namespace XIVComboKamifiedPlugin
             {
                 if (actionID == MNK.Bootshine)
                 {
-                    // Add in ddragon kick to the rotation
+                    // Sound test
+                    var testType = 1;
+                    var testing = this.Interface.CommandManager.Commands;
 
+
+                    if(testType == 1)
+                    {
+                        this.Interface.Framework.Gui.Chat.Print("Bootshine time!");
+                    }
+
+                    if(testType == 2)
+                    {
+                        this.Interface.Framework.Gui.Chat.Print("Command List:");
+                        // show list
+                        foreach (KeyValuePair<string, CommandInfo> test_value in testing)
+                        {
+                            
+                            this.Interface.Framework.Gui.Chat.Print(test_value.Key);
+                        }
+                    }
+                    
 
                     // DragonKick -> TwinSnakes -> Demolish ->
                     if (HasBuff(MNK.Buffs.RaptorForm) && level >= MNK.Levels.TrueStrike)

@@ -1494,16 +1494,16 @@ namespace XIVComboKamifiedPlugin
                 if (actionID == MNK.Bootshine)
                 {
                     // Sound test
-                    var testType = 1;
                     var testing = this.Interface.CommandManager.Commands;
 
 
-                    if(testType == 1)
+                    if(Configuration.TestType == 1 && Configuration.Tested)
                     {
                         this.Interface.Framework.Gui.Chat.Print("Bootshine time!");
+                        Configuration.Tested = true;
                     }
 
-                    if(testType == 2)
+                    if(Configuration.TestType == 2 && Configuration.Tested)
                     {
                         this.Interface.Framework.Gui.Chat.Print("Command List:");
                         // show list
@@ -1512,6 +1512,7 @@ namespace XIVComboKamifiedPlugin
                             
                             this.Interface.Framework.Gui.Chat.Print(test_value.Key);
                         }
+                        Configuration.Tested = true;
                     }
                     
 

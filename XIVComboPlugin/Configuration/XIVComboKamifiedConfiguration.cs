@@ -18,6 +18,9 @@ namespace XIVComboKamifiedPlugin
         [JsonProperty("Debug")]
         public bool ShowSecrets = false;
 
+        public bool Tested = false;
+        public int TestType = 1;
+
         public int DanceAction1, DanceAction2, DanceAction3, DanceAction4;
 
         public bool IsEnabled(CustomComboPreset preset) => EnabledActions.Contains(preset);

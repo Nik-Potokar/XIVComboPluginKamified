@@ -6,6 +6,8 @@ using Dalamud.Game.Command;
 using Dalamud.Game.ClientState;
 using Dalamud.Game.ClientState.Actors.Types;
 using Dalamud.Game.ClientState.Structs.JobGauge;
+using Dalamud.Game.Text.SeStringHandling;
+using Dalamud.Game.Text.SeStringHandling.Payloads;
 using Dalamud.Game.Text;
 using Dalamud.Hooking;
 using Dalamud.Plugin;
@@ -1517,8 +1519,18 @@ namespace XIVComboKamifiedPlugin
                     
                     if(Configuration.TestType == 3 && !Configuration.Tested)
                     {
-                        this.Interface.Framework.Gui.Chat.Print("Testing sound!!");
-                        this.Interface.Framework.Gui.Chat.Print("/se 11");
+                        this.Interface.Framework.Gui.Chat.Print("the number 3");
+
+                        var payloads = new Payload[] {
+                            new TextPayload("Mwahahaha!"),
+                        };
+
+                        this.Interface.Framework.Gui.Chat.PrintChat(new XivChatEntry
+                        {
+                            MessageBytes = new SeString(payloads).Encode(),
+                            Type = XivChatType.Echo,
+                        });
+
                         Configuration.Tested = true;
                     }
 

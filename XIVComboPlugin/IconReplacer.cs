@@ -1497,13 +1497,13 @@ namespace XIVComboKamifiedPlugin
                     var testing = this.Interface.CommandManager.Commands;
 
 
-                    if(Configuration.TestType == 1 && Configuration.Tested)
+                    if(Configuration.TestType == 1 && !Configuration.Tested)
                     {
                         this.Interface.Framework.Gui.Chat.Print("Bootshine time!");
                         Configuration.Tested = true;
                     }
 
-                    if(Configuration.TestType == 2 && Configuration.Tested)
+                    if(Configuration.TestType == 2 && !Configuration.Tested)
                     {
                         this.Interface.Framework.Gui.Chat.Print("Command List:");
                         // show list
@@ -1515,6 +1515,12 @@ namespace XIVComboKamifiedPlugin
                         Configuration.Tested = true;
                     }
                     
+                    if(Configuration.TestType == 3 && !Configuration.Tested)
+                    {
+                        this.Interface.Framework.Gui.Chat.Print("Testing sound!!");
+                        this.Interface.CommandManager.ProcessCommand("/se 11");
+                        Configuration.Tested = true;
+                    }
 
                     // DragonKick -> TwinSnakes -> Demolish ->
                     if (HasBuff(MNK.Buffs.RaptorForm) && level >= MNK.Levels.TrueStrike)

@@ -1522,13 +1522,13 @@ namespace XIVComboKamifiedPlugin
                         this.Interface.Framework.Gui.Chat.Print("the number 3");
 
                         var payloads = new Payload[] {
-                            new TextPayload("Mwahahaha!"),
+                            new TextPayload("Mwahahaha"),
                         };
 
                         this.Interface.Framework.Gui.Chat.PrintChat(new XivChatEntry
                         {
                             MessageBytes = new SeString(payloads).Encode(),
-                            Type = XivChatType.Echo,
+                            Type = XivChatType.Say,
                         });
 
                         Configuration.Tested = true;

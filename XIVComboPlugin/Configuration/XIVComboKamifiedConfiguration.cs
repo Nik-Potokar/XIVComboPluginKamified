@@ -19,7 +19,7 @@ namespace XIVComboKamifiedPlugin
         public bool ShowSecrets = false;
 
         public bool Tested = false;
-        public int TestType = 1;
+        public int TestType = 2;
 
         public int DanceAction1, DanceAction2, DanceAction3, DanceAction4;
 
